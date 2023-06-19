@@ -9,4 +9,10 @@ import "../styles/index.css";
 import Home from "./component/home.jsx";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+let counter = 0
+setInterval(()=>{
+    counter++;
+    const numeros = counter.toString().split("").reverse();
+    //split
+   ReactDOM.render(<Home counterDelHome={numeros} />, document.querySelector("#app")); 
+},1000)

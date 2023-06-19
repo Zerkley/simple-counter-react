@@ -1,26 +1,24 @@
 import React from "react";
-
+import SecondsCounter from "./SecondsCounter.jsx";
+import Clock from "./clock.jsx";
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
-const Home = () => {
+function Home(props) {
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+	  <div className="d-flex justify-content-center bg-black">
+		<Clock />
+		<SecondsCounter counterDelSecondsCounter={props.counterDelHome[5]} />
+		<SecondsCounter counterDelSecondsCounter={props.counterDelHome[4]} />
+		<SecondsCounter counterDelSecondsCounter={props.counterDelHome[3]} />
+		<SecondsCounter counterDelSecondsCounter={props.counterDelHome[2]} />
+		<SecondsCounter counterDelSecondsCounter={props.counterDelHome[1]} />
+		<SecondsCounter counterDelSecondsCounter={props.counterDelHome[0]} />
 
-export default Home;
+	  </div>
+	);
+  }
+  
+  export default Home;
+  
